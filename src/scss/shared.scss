@@ -1,0 +1,26 @@
+
+//Fonts
+$titles: 'Ubuntu Condensed', sans-serif;
+$items: 'Nunito', sans-serif;
+
+
+
+//Colors
+$container-color: #58A4B0;
+$dish-color: #D64933;
+$ingredient-color: #0C7C59;
+
+
+$fonts: white;
+$nav: black;
+
+@mixin placeholder-color {
+  ::-webkit-input-placeholder {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+  :-moz-placeholder           {@content}
+}
+
+@include placeholder-color {
+    color: $fonts;
+}

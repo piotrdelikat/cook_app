@@ -1,0 +1,202 @@
+@import "./scss/shared.scss";
+
+.App {
+  display: grid;
+  grid-template-columns: 5% auto 5%;
+  grid-template-rows: 70px  auto 5%;
+  grid-template-areas:
+    ". header . "
+    ". container . "
+    ". container . ";
+
+  min-height: 100vh;
+  background-color: lighten($container-color, 45%);
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  margin-left: 40px;
+  li {
+    margin-left: 30px;
+    margin-right: 30px;
+    }
+    a {
+      color: $nav;
+      font-family: $titles;
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+}
+
+input:focus {
+  outline: none;
+}
+
+.container {
+  background-color: lighten($container-color, 30%);
+  grid-area: container;
+
+  display: grid;
+  grid-template-rows: 70px auto;
+  height: 100%;
+}
+
+.title {
+  color: $nav;
+  font-family: $titles;
+  font-size: 1.7rem;
+  text-align: center;
+
+  grid-row: 1/2;
+}
+
+
+.container-grid {
+  grid-row-start: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.dishes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  li {
+    font-size: 1.2rem;
+  }
+}
+
+.item-dish,
+.item-dish input {
+  background-color: $dish-color;
+  color: $fonts;
+
+  font-family: $items;
+  font-size: 1.7rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 33.3%;
+  min-width: 250px;
+
+  display: flex;
+  align-content: center;
+}
+
+
+.item,
+.item input {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  background-color: $ingredient-color;
+  font-family: $items;
+  color: $fonts;
+
+  font-size: 1.7rem;
+  width: 250px;
+  height: 60px;
+}
+
+.item {
+  padding: 5px 40px 5px 20px;
+  margin: 10px;
+}
+
+.item input,
+.item-dish input {
+  color: $fonts;
+  border:none;
+}
+
+.item-dish {
+  display: inline-block;
+  margin: 10px;
+  padding: 5px 40px 5px 20px;
+  p {
+    font-size: 16px
+  }
+}
+
+.ingredients,
+.dragable-ingredients {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.dragable-ingredient {
+  cursor: pointer;
+}
+
+.dish-item-name {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-name,
+.item-delete,
+.remove-ingredient {
+  margin-top: auto !important;
+  margin-bottom: auto !important;
+}
+
+.item-name {
+  width: 100%;
+  text-align: left;
+}
+
+.item-delete,
+.remove-ingredient {
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: -30px;
+}
+
+.search {
+  width: 400px;
+  font-size: 0.8rem;
+  margin: 0 auto 0 auto;
+  input {
+    width: 100%;
+    color: $fonts;
+    @include placeholder-color;
+  }
+}
+
+.search-target {
+  min-height: 170px;
+  width: 60%;
+  margin-top: 30px;
+
+  justify-self: center;
+  text-align: center;
+  border: 2px dashed black;
+  h3 {
+    font-family: $titles;
+  }
+  ul {
+    list-style: none;
+    li {
+      font-family: $items;
+      background-color: lighten($ingredient-color, 20%);
+      color: $fonts;
+      width: 200px;
+      display: flex;
+      justify-content: space-between;
+
+      margin: 10px auto 10px auto;
+      padding-left: 10px;
+    }
+  }
+}
