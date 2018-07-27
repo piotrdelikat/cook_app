@@ -7,7 +7,7 @@
 /coverage
 
 #Default readme
-README.md
+DEFAULT_README.md
 
 # misc
 .DS_Store
